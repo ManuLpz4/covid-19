@@ -10,10 +10,6 @@ class FoundationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(MediaQuery.of(context).size.width - 64);
-    print(foundation.balance / foundation.goal);
-    print((MediaQuery.of(context).size.width - 64) *
-        (foundation.balance / foundation.goal));
     return Scaffold(
       appBar: AppBar(
         title: Text('${foundation.name}'),
@@ -28,13 +24,8 @@ class FoundationPage extends StatelessWidget {
             child: CircleAvatar(
               backgroundColor: Colors.transparent,
               radius: MediaQuery.of(context).size.width / 4,
-              child: FadeInImage(
-                width: MediaQuery.of(context).size.width / 2,
-                height: MediaQuery.of(context).size.width / 2,
-                placeholder:
-                    AssetImage('assets/images/foundation_placeholder.png'),
-                image: NetworkImage(
-                    'http://35.196.67.153:3100/inicio/${foundation.imageUrl}'),
+              child: Image(
+                image: AssetImage('assets/images/foundation_placeholder.png'),
               ),
             ),
           ),
@@ -135,7 +126,7 @@ class FoundationPage extends StatelessWidget {
                     borderRadius: const BorderRadius.all(Radius.circular(2)),
                   ),
                 ),
-                ListTile(title: Text('Elige tu medio de pago')),
+                ListTile(title: Text('Medios de pago')),
                 ListTile(
                   leading: Image(
                     image: AssetImage('assets/images/mercadopago.png'),
