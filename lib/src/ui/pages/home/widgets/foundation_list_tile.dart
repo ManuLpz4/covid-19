@@ -18,10 +18,13 @@ class FoundationListTile extends StatelessWidget {
         child: ListTile(
           onTap: () => Navigator.pushNamed(context, '/foundation',
               arguments: foundation),
-          leading: CircleAvatar(
-            backgroundColor: Colors.transparent,
-            backgroundImage:
-                AssetImage('assets/images/foundation_placeholder.png'),
+          leading: Hero(
+            tag: 'foundation_image_${foundation.id}',
+                      child: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              backgroundImage:
+                  AssetImage('assets/images/foundation_placeholder.png'),
+            ),
           ),
           title: Text('${foundation.name}'),
           subtitle: Text('\$${foundation.balance} / \$${foundation.goal}'),

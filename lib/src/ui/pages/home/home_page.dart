@@ -1,9 +1,7 @@
 import 'package:covid_19/src/models/foundation.dart';
 import 'package:covid_19/src/providers/foundations_provider.dart';
 import 'package:covid_19/src/ui/pages/home/widgets/foundation_list_tile.dart';
-import 'package:covid_19/src/ui/widgets/app_container.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   @override
