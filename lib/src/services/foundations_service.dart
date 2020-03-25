@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 
 import 'package:covid_19/src/models/foundation.dart';
+import 'package:covid_19/src/utils/constants.dart';
 
 class FoundationsService {
   Future<List<Foundation>> fetchFoundations() async {
@@ -12,9 +13,9 @@ class FoundationsService {
 
     try {
       final http.Response response = await http.get(
-        'http://35.196.67.153:3100/inicio',
+        '$apiBaseUrl/foundations',
       );
-      final Iterable<dynamic> list = json.decode(response.body)['data'];
+      final Iterable<dynamic> list = json.decode(response.body);
       foundations = list.map((e) => Foundation.fromJson(e)).toList();
     } on SocketException {
       throw const SocketException('SocketException: Voló todo');
